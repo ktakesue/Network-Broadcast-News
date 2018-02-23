@@ -1,9 +1,9 @@
 const net = require("net");
-const PORT = 6969;
+// const PORT = 6969;
 
 const server = net.createServer(client => {
   console.log("Client connected!");
-  client.write("HELLO YOU'RE CONNECTED");
+  client.write("HELLO MOTHERTRUCKER");
   client.on("data", data => {
     console.log(data.toString());
   });
@@ -12,8 +12,8 @@ const server = net.createServer(client => {
   });
 });
 
-server.listen(PORT, "10.0.1.110", () => {
-  console.log(`Server started on port: ${PORT}`);
+server.listen(6969, "0.0.0.0", () => {
+  console.log(`Server started on port 6969`);
 });
 
 process.stdin.setEncoding("utf8");

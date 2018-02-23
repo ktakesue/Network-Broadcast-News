@@ -1,5 +1,5 @@
 const net = require("net");
 
-const server = net.createConnection(6969, "10.0.1.110", () => {
+const server = net.createConnection(6969, "0.0.0.0", () => {
   server.write("HEWWWWWWWO");
 });
