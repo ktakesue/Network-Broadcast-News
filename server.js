@@ -6,8 +6,8 @@ const server = net.createServer(client => {
   client.write("HELLO MOTHERTRUCKER AND WELCOME");
 
   client.setEncoding("utf8");
+  client.name = "Bitch";
   clients.push(client);
-  //   console.log("Client Names", clients);
 
   process.stdin.on("readable", () => {
     const chunk = process.stdin.read();
@@ -19,10 +19,14 @@ const server = net.createServer(client => {
     }
   });
 
+  client.write(" WRITE YOUR NAME, IDIOT: ");
+
   client.on("data", data => {
+    const username = client.name;
+
     clients.forEach(clientData => {
       console.log(data.toString());
-      clientData.write(data.toString());
+      clientData.write(`${username} : ${data}`);
     });
   });
 
@@ -35,9 +39,6 @@ const server = net.createServer(client => {
     console.log("SEE YA SPACE COWBOY");
   });
 });
-// process.stdin.on("end", () => {
-//   process.stdout.write("end");
-// });
 
 server.listen(6969, "0.0.0.0", () => {
   console.log(`Server started on port 6969`);

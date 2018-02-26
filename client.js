@@ -18,5 +18,5 @@ client.on("error", () => {
 });
 
 client.on("close", () => {
-  console.log("Connection closed");
+  console.log("Connection closed. See ya, dummy");
 });
